@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quickmart - Order Page</title>
+<style>
+    /* Base Styles */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9;
+        margin: 0;
+        padding: 0;
+    }
+    .header {
+        background-color:#134215;
+        color: #fff;
+        padding: 15px;
+        text-align: center;
+    }
+    .header a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+        
+    }
+    .container {
+        width: 80%;
+        margin: auto;
+        padding: 20px;
+    }
+    .product-category, .special-offers, .order-summary {
+        margin-top: 20px;
+        background-color: #f4f4f4;
+        padding: 20px;
+        border-radius: 5px;
+    }
+    .product-category h2, .special-offers h2, .order-summary h2 {
+        margin-top: 0;
+    }
+    .product-category label, .special-offers label {
+        display: block;
+        margin: 8px 0;
+    }
+    .order-summary {
+        border: 2px solid #333;
+    }
+
+    /* Animations */
+    .fade-in {
+        animation: fadeIn 0.5s ease-in;
+    }
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    padding: 8px 15px;
+    border: 2px solid white;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+    
+}
+
+nav a:hover {
+    background-color: white;
+    color: #4CAF50;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+    <h1>✨ Quickmart ✨</h1>
+        <p>Quality groceries to your doorstep</p>
+        <nav><div class="bar">
+            <a href="project.html">Home</a>
+            <a href="aboutme.html">About Us</a>
+            <a href="order.html">Order</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="help.html">Help</a>
+        </nav></div>
+</div>
+
+<div class="container">
+    <!-- Product Selection -->
+    <div class="product-category">
+        <h2>Select Your Products</h2>
+        <form id="product-form">
+            <label><input type="checkbox" name="product" value="Apples - $2.99/lb"> Apples - $2.99/lb</label>
+            <label><input type="checkbox" name="product" value="Bananas - $1.50/lb"> Bananas - $1.50/lb</label>
+            <label><input type="checkbox" name="product" value="Carrots - $1.20/lb"> Carrots - $1.20/lb</label>
+            <label><input type="checkbox" name="product" value="Oranges - $2.50/lb"> Oranges - $2.50/lb</label>
+            <label><input type="checkbox" name="product" value="Tomatoes - $1.80/lb"> Tomatoes - $1.80/lb</label>
+            <label><input type="checkbox" name="product" value="Household Cleaner - $5.00"> Household Cleaner - $5.00</label>
+            <label><input type="checkbox" name="product" value="Laundry Detergent - $8.00"> Laundry Detergent - $8.00</label>
+            <label><input type="checkbox" name="product" value="Dish Soap - $3.50"> Dish Soap - $3.50</label>
+        </form>
+
+        <!-- Custom Item Input -->
+        <div style="margin-top: 15px;">
+            <input type="text" id="custom-product" placeholder="Add custom item (e.g., Milk - $2.50)" style="width: 70%;">
+            <button onclick="addCustomItem()" style="padding: 5px 10px; cursor: pointer;">Add Item</button>
+        </div>
+    </div>
+
+    <!-- Special Offers -->
+    <div class="special-offers">
+        <h2>Special Deals & Offers</h2>
+        <ul>
+            <li>Buy 1 Get 1 Free on Bananas</li>
+            <li>20% off on Carrots</li>
+            <li>Free Delivery for Orders over $50</li>
+            <li>Special Discount on Seasonal Fruits</li>
+        </ul>
+    </div>
+
+    <!-- Order Summary -->
+    <div class="order-summary">
+        <h2>Your Selected Products</h2>
+        <ul id="selected-products">
+            <!-- Selected products will appear here -->
+        </ul>
+    </div>
+</div>
+
+<script>
+    // JavaScript to update order summary
+    document.getElementById("product-form").addEventListener("change", function() {
+        updateSelectedProducts();
+    });
+
+    function updateSelectedProducts() {
+        const selectedProducts = document.querySelectorAll("input[name='product']:checked");
+        const productList = document.getElementById("selected-products");
+        
+        productList.innerHTML = ""; // Clear current list
+
+        selectedProducts.forEach(product => {
+            addProductToList(product.value);
+        });
+    }
+
+    // Function to add a product to the list with animation
+    function addProductToList(productName) {
+        const productList = document.getElementById("selected-products");
+        const listItem = document.createElement("li");
+        listItem.textContent = productName;
+        listItem.classList.add("fade-in");
+        productList.appendChild(listItem);
+    }
+
+    // Function to add a custom item from input box
+    function addCustomItem() {
+        const customProductInput = document.getElementById("custom-product");
+        const customProduct = customProductInput.value.trim();
+
+        if (customProduct) {
+            addProductToList(customProduct);
+            customProductInput.value = ""; // Clear input box
+        }
+    }
+</script>
+
+</body>
+</html>

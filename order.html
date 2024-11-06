@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Summary</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #ecf6ea;
+    }
+    .container {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: #fffdfd;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .header {
+      text-align: center;
+      padding: 10px 0;
+      background-color: #134215;
+      height: 200px;
+    }
+    .header h1 {
+      font-size: 24px;
+      color: #16a730;
+    }
+    .order-info, .items-list, .order-summary, .actions {
+      margin-top: 20px;
+    }
+    .order-info div, .order-summary div {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 0;
+    }
+    .items-list .item {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #ddd;
+    }
+    .items-list img {
+      width: 50px;
+      height: 50px;
+      border-radius: 5px;
+      margin-right: 10px;
+    }
+    .item-details {
+      flex: 1;
+    }
+    .item-price {
+      font-weight: bold;
+    }
+    .actions {
+      text-align: center;
+      margin-top: 30px;
+    }
+    .btn {
+      padding: 10px 20px;
+      color: #fff;
+      background-color: #28a745;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .btn-secondary {
+      background-color: #007bff;
+    }
+    .btn:hover {
+      opacity: 0.9;
+    }
+    nav a {
+    color: white;
+    margin:  15px;
+    text-decoration: none;
+    padding: 8px 15px;
+    border: 2px solid white;
+    border-radius: 8px;
+    transition: background-color 0.3s, color 0.3s;
+    
+    
+}
+
+nav a:hover {
+    background-color: white;
+    color: #4CAF50;
+}
+.pan{
+  margin-top: 50px;
+}
+
+  </style>
+</head>
+<body>
+  
+<div class="header">
+  <h1>✨ Quickmart ✨</h1>
+      <p style="color: white;">Quality groceries to your doorstep</p>
+      <nav><div class="pan">
+          <a href="project.html">Home</a>
+          <a href="aboutme.html">About Us</a>
+          <a href="order.html">Order</a>
+          <a href="dshbrd.html">Dashboard</a>
+          <a href="help.html">Help</a>
+      </nav></div></div>
+</div>
+  
+  <div class="container">
+    
+    <div class="header">
+      <h1>Order Summary</h1>
+      <p style="color: white;">Order #12345 - Placed on Oct 20, 2024</p>
+    </div>
+
+    
+    <div class="order-info">
+      <h3>Order Details</h3>
+      <div><span>Order Date:</span><span>Oct 20, 2024</span></div>
+      <div><span>Status:</span><span>Out for Delivery</span></div>
+      <div><span>Estimated Delivery:</span><span>Oct 25, 2024</span></div>
+      <div><span>Delivery Address:</span><span>123 Main St, Anytown</span></div>
+    </div>
+
+    
+    <div class="items-list">
+      <h3>Items</h3>
+      <div class="item">
+        <img src="https://via.placeholder.com/50" alt="Product Image">
+        <div class="item-details">
+          <p>Organic Apples</p>
+          <small>Quantity: 2</small>
+        </div>
+        <span class="item-price">$4.00</span>
+      </div>
+      <div class="item">
+        <img src="https://via.placeholder.com/50" alt="Product Image">
+        <div class="item-details">
+          <p>Whole Wheat Bread</p>
+          <small>Quantity: 1</small>
+        </div>
+        <span class="item-price">$3.00</span>
+      </div>
+      
+    </div>
+
+    
+    <div class="order-summary">
+      <h3>Order Summary</h3>
+      <div><span>Subtotal:</span><span>$7.00</span></div>
+      <div><span>Shipping:</span><span>$2.00</span></div>
+      <div><span>Total:</span><span>$9.00</span></div>
+    </div>
+
+    
+    <div class="actions">
+      <a href="#" class="btn">Track Order</a>
+      <a href="#" class="btn btn-secondary">Download Invoice</a>
+      <a href="#" class="btn btn-secondary">Reorder</a>
+    </div>
+  </div>
+
+</body>
+</html>
